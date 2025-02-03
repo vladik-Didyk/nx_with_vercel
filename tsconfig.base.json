@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vercel-with-nx-remix/library/components/buttons": [
+      "@components/buttons": [
         "library/components/buttons/src/index.ts"
       ],
-      "@vercel-with-nx-remix/library/components/buttons/server": [
+      "@components/buttons-server": [
         "library/components/buttons/src/server.ts"
       ]
     }

@@ -35,6 +35,7 @@
         "testTargetName": "test",
         "serveTargetName": "serve",
         "previewTargetName": "preview",
+        "devTargetName": "dev",
         "serveStaticTargetName": "serve-static",
         "typecheckTargetName": "typecheck"
       }
@@ -49,7 +50,18 @@
   "generators": {
     "@nx/react": {
       "library": {
+        "style": "css",
+        "linter": "eslint",
         "unitTestRunner": "vitest"
+      },
+      "application": {
+        "babel": true,
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "webpack"
+      },
+      "component": {
+        "style": "css"
       }
     }
   },

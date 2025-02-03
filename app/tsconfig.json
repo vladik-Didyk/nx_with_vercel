@@ -15,6 +15,9 @@
   },
   "include": [],
   "files": [],
+  "types": {
+    "vitest": "vitest/globals"
+  },
   "references": [
     {
       "path": "./tsconfig.app.json"

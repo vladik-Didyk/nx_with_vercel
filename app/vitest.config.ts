@@ -7,22 +7,16 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import {remixDevTools} from 'remix-development-tools';
 
 export default defineConfig({
-  root: __dirname,
-  plugins: [
-    remixDevTools({
-      pluginDir: './app/plugins',
-    }),
-    remix({
-      presets: [vercelPreset()],
-      appDirectory: "app",
-    }),
-    react(),
-    nxViteTsPaths(),
-    tsconfigPaths(),
-  ].filter(Boolean),
-  server: {
-    open: true,
-    port: 3000
+  plugins: [tsconfigPaths(), nxViteTsPaths()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    poolOptions:{
+      threads: {
+        singleThread: true,
+      },
+    },
+    include: ['**/*.test.ts'],
   },
 });
 

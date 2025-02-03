@@ -2,7 +2,7 @@
   "version": 2,
   "framework": "vite",
   "installCommand": "npm install",
-  "buildCommand": "npx nx run entrycall:build",
+  "buildCommand": "npx nx run app_test:build",
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]

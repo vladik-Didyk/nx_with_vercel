@@ -7,10 +7,12 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import tailwind from '../tailwind.css';
 
 export const meta: MetaFunction = () => [
   {
     title: 'New Remix App',
+    href: tailwind.toString(),
   },
 ];
 

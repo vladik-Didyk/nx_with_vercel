@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { vercelPreset } from '@vercel/remix/vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-
+// import {remixDevTools} from 'remix-development-tools/vite';
 
 export default defineConfig({
   root: __dirname,
@@ -15,6 +15,11 @@ export default defineConfig({
     }),
     react(),
     nxViteTsPaths(),
-    tsconfigPaths()
+    tsconfigPaths(),
+    // remixDevTools()
   ].filter(Boolean),
+  server: {
+    open: true,
+    port: 3000
+  },
 });

@@ -9,7 +9,9 @@ import {remixDevTools} from 'remix-development-tools';
 export default defineConfig({
   root: __dirname,
   plugins: [
-    remixDevTools(),
+    remixDevTools({
+      pluginDir: './app/plugins',
+    }),
     remix({
       presets: [vercelPreset()],
       appDirectory: "app",

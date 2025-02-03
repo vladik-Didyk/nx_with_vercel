@@ -1,16 +1,20 @@
 import { vitePlugin as remix } from '@remix-run/dev';
-import { installGlobals } from '@remix-run/node';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { vercelPreset } from '@vercel/remix/vite';
+import react from '@vitejs/plugin-react';
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
-installGlobals();
 
 export default defineConfig({
+  root: __dirname,
   plugins: [
     remix({
       presets: [vercelPreset()],
+      appDirectory: "app",
     }),
-    tsconfigPaths(),
-  ],
+    react(),
+    nxViteTsPaths(),
+    tsconfigPaths()
+  ].filter(Boolean),
 });
